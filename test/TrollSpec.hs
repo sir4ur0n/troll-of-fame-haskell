@@ -54,7 +54,7 @@ test_metamorphic = testProperty "When a troll kills an elf, his score should inc
 -- | This is an injective property: we check that different inputs must yield different results.
 --
 -- This is useful whenever you need to ensure an output can only be reached by a single input; e.g. a hash function, or a function that takes a person and returns its Social Security Number (imagine if 2 persons had the same SSN!)
-test_injective = testProperty "When killing elves with different roles, a troll should get different scores" \troll elf1 elf2 ->
+test_injective = testProperty "When killing different elves, a troll should get different scores" \troll elf1 elf2 ->
   elf1 /= elf2 ==> 
     let 
       trollKilledElf1 = SUT.iGotOne elf1 troll 

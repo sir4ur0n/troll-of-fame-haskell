@@ -48,9 +48,8 @@ allElvesOfAKindResurrected elf Troll {..} = Troll {killList = killListWithoutRes
 modifyScore :: (QuantityKilled -> QuantityKilled) -> Elf -> Troll -> Troll
 modifyScore modifier elf Troll {..} = Troll {killList = newKillList, ..}
   where
-    newKillList =
-      if nextNbKilled <= 0
-        then Map.delete elf killList
-        else Map.insert elf nextNbKilled killList
+    newKillList
+      | nextNbKilled <= 0 = Map.delete elf killList
+      | otherwise = Map.insert elf nextNbKilled killList
     currentNbKilled = Map.lookup elf killList
     nextNbKilled = modifier $ fromMaybe 0 currentNbKilled

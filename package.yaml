@@ -1,13 +1,10 @@
 name: property-based-test-workshop-haskell
-version: 0.1.0.0
+version: 1.0.0.0
 github: "Sir4ur0n/property-based-test-workshop-haskell"
 license: BSD3
 author: "Julien Debon"
-maintainer: "julien.debon@pm.me"
+maintainer: "Julien Debon"
 copyright: "WTFPL"
-
-extra-source-files:
-  - README.md
 
 description: Please see the README on GitHub at <https://github.com/Sir4ur0n/property-based-test-workshop-haskell#readme>
 
@@ -27,9 +24,7 @@ ghc-options:
 
 dependencies:
   - base >= 4.7 && < 5
-  # Favor Text over String (more efficient)
-  - text
-  # Provides map and set
+  # Provides Map data structure
   - containers
 
 default-extensions:
@@ -46,7 +41,6 @@ default-extensions:
   - DeriveGeneric
   - DeriveTraversable
   - DoAndIfThenElse
-  # To allow multiple declaration of the same field name
   - DuplicateRecordFields
   - EmptyDataDecls
   - ExistentialQuantification
@@ -83,17 +77,6 @@ default-extensions:
 library:
   source-dirs: src
 
-executables:
-  property-based-test-workshop-haskell-exe:
-    main: Main.hs
-    source-dirs: app
-    ghc-options:
-      - -threaded
-      - -rtsopts
-      - -with-rtsopts=-N
-    dependencies:
-      - property-based-test-workshop-haskell
-
 tests:
   property-based-test-workshop-haskell-test:
     main: Spec.hs
@@ -116,13 +99,6 @@ tests:
       - -O0
     dependencies:
       - property-based-test-workshop-haskell
-      # Property based testing
-      - QuickCheck
-      - quickcheck-instances
-      - quickcheck-arbitrary-adt
-      # Unit testing
-      - HUnit
-      # Test aggregation and discovery
       - tasty
       - tasty-quickcheck
       - tasty-hunit
