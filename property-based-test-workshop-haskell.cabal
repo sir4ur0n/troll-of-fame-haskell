@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: fd18e3fc712eb4e1af7f441d056f00898a31a0ffdd9a27cf64b686a1e414568d
+-- hash: ef7bb00ddbcae7918628c5bc8294d05321af69912606f3898e18767581f6d267
 
 name:           property-based-test-workshop-haskell
 version:        1.0.0.0
@@ -43,7 +43,6 @@ test-suite property-based-test-workshop-haskell-test
       ElfProp
       ElfTest
       Generators
-      TrollProp
       TrollTest
       Paths_property_based_test_workshop_haskell
   hs-source-dirs:
