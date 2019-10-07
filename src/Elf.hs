@@ -28,7 +28,7 @@ multiplierPerRace High = 2
 multiplierPerRace Dark = 1
 
 valuePerRole :: Role -> BaseValue
-valuePerRole Archer = 3
+valuePerRole Archer = 2
 valuePerRole Swordsman = 1
 valuePerRole Priest = 5
 valuePerRole Warlock = 4
